@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'none'; style-src 'unsafe-inline'; img-src 'self'; base-uri 'none'; form-action 'none'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src https://static.cloudflareinsights.com/beacon.min.js; connect-src https://cloudflareinsights.com; style-src 'unsafe-inline'; img-src 'self'; base-uri 'none'; form-action 'none'">
     <meta name="referrer" content="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="dark">
@@ -48,6 +48,31 @@
         animation: appear 1.2s ease-out both;
       }
 
+      .privacy {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 16px 20px 32px;
+        color: #a3a3a3;
+        font: 14px/1.6 system-ui, sans-serif;
+      }
+
+      .privacy summary {
+        width: fit-content;
+        margin: 0 auto;
+        cursor: pointer;
+      }
+
+      .privacy a {
+        color: inherit;
+        overflow-wrap: anywhere;
+      }
+
+      .privacy summary:focus-visible,
+      .privacy a:focus-visible {
+        outline: 2px solid #eeefeb;
+        outline-offset: 4px;
+      }
+
       @media (max-width: 600px) {
         h1 {
           font-size: 53.24px;
@@ -82,5 +107,12 @@
     <main>
       <h1>NW Farnham</h1>
     </main>
+    <details class="privacy">
+      <summary>Privacy</summary>
+      <p>We use Cloudflare Web Analytics to understand website traffic and performance. Its browser beacon sends page and performance measurements to Cloudflare. Cloudflare states that Web Analytics does not use cookies, local storage, or fingerprinting to track visitors. Reports show statistics, not visitors' names or email addresses. Your device still makes network requests to Cloudflare; cookieless does not mean no processing occurs.</p>
+      <p>GitHub Pages hosts this website and processes connection information, including IP addresses, to deliver and secure it. Providers may process information in the United States and other countries.</p>
+      <p>Learn more about <a href="https://developers.cloudflare.com/web-analytics/about/" rel="noreferrer">Cloudflare Web Analytics</a>, <a href="https://www.cloudflare.com/privacypolicy/" rel="noreferrer">Cloudflare's privacy practices</a>, and <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noreferrer">GitHub's privacy practices</a>.</p>
+    </details>
+    <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a227724dd7cb4470ba342c5ab9aba03a"}'></script>
   </body>
 </html>
