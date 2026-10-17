@@ -23,10 +23,60 @@
 
       body {
         margin: 0;
-        background: #000000;
+        background:
+          radial-gradient(ellipse at 18% 20%, rgba(60, 45, 120, 0.08), transparent 50%),
+          radial-gradient(ellipse at 82% 78%, rgba(20, 60, 110, 0.07), transparent 45%),
+          radial-gradient(ellipse at 50% 50%, #03040a 0%, #010103 60%, #000000 100%);
+        background-color: #000000;
+        background-attachment: fixed;
+      }
+
+      body::before,
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      /* Odd tile sizes keep the repeating star pattern from looking like a grid. */
+      body::before {
+        background-image:
+          radial-gradient(1px 1px at 23px 41px, #ffffff, transparent),
+          radial-gradient(1px 1px at 97px 13px, rgba(255, 255, 255, 0.85), transparent),
+          radial-gradient(1px 1px at 151px 189px, #ffffff, transparent),
+          radial-gradient(1px 1px at 211px 97px, rgba(255, 255, 255, 0.7), transparent),
+          radial-gradient(1px 1px at 67px 223px, rgba(255, 255, 255, 0.9), transparent),
+          radial-gradient(1px 1px at 179px 151px, rgba(255, 255, 255, 0.6), transparent),
+          radial-gradient(1px 1px at 131px 71px, #ffffff, transparent),
+          radial-gradient(1px 1px at 5px 131px, rgba(255, 255, 255, 0.75), transparent),
+          radial-gradient(1px 1px at 233px 211px, rgba(255, 255, 255, 0.65), transparent),
+          radial-gradient(1px 1px at 43px 173px, #ffffff, transparent),
+          radial-gradient(1px 1px at 311px 47px, rgba(255, 255, 255, 0.8), transparent),
+          radial-gradient(1px 1px at 283px 263px, #ffffff, transparent),
+          radial-gradient(1px 1px at 331px 157px, rgba(255, 255, 255, 0.7), transparent),
+          radial-gradient(1px 1px at 113px 307px, #ffffff, transparent),
+          radial-gradient(1px 1px at 257px 331px, rgba(255, 255, 255, 0.6), transparent);
+        background-size: 347px 347px;
+      }
+
+      body::after {
+        background-image:
+          radial-gradient(2px 2px at 61px 163px, #ffffff, transparent),
+          radial-gradient(1.5px 1.5px at 251px 59px, #cfe0ff, transparent),
+          radial-gradient(2.5px 2.5px at 389px 293px, #ffffff, transparent),
+          radial-gradient(1.5px 1.5px at 139px 401px, #ffe9c4, transparent),
+          radial-gradient(2px 2px at 457px 131px, #dfe9ff, transparent),
+          radial-gradient(1.5px 1.5px at 23px 479px, #ffffff, transparent),
+          radial-gradient(2px 2px at 317px 443px, #ffd9d0, transparent);
+        background-size: 523px 523px;
+        animation: twinkle 5s ease-in-out infinite alternate;
       }
 
       main {
+        position: relative;
+        z-index: 1;
         display: grid;
         min-height: 100vh;
         min-height: 100svh;
@@ -74,8 +124,18 @@
       }
 
       @media (prefers-reduced-motion: reduce) {
-        h1 {
+        h1,
+        body::after {
           animation: none;
+        }
+      }
+
+      @keyframes twinkle {
+        from {
+          opacity: 0.5;
+        }
+        to {
+          opacity: 1;
         }
       }
 

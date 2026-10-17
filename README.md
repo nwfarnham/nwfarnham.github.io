@@ -10,6 +10,11 @@ footer scrollbar. The title and page padding scale with the viewport. Expanding
 Privacy lets the page grow and scroll when needed so the notice remains readable
 on small screens and at increased text sizes.
 
+The background is a CSS-only deep-space starfield (gradients and pseudo-elements),
+so it needs no images or scripts and fits the existing content security policy.
+Brighter stars twinkle gently; the animation stops when the visitor prefers
+reduced motion.
+
 ## Analytics
 
 Cloudflare Web Analytics uses a public site token in the module script at the end
