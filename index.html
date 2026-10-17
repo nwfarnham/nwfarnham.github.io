@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#000000">
+    <title>NW Farnham</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        background: #000000;
+        color: #eeefeb;
+        font-family: Georgia, "Times New Roman", serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #000000;
+      }
+
+      main {
+        display: grid;
+        min-height: 100svh;
+        place-items: center;
+        padding: 32px 20px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 80px;
+        font-weight: 400;
+        line-height: 1.15;
+        letter-spacing: 0;
+        text-align: center;
+        animation: appear 1.2s ease-out both;
+      }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 44px;
+        }
+      }
+
+      @media (max-width: 340px) {
+        h1 {
+          font-size: 36px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        h1 {
+          animation: none;
+        }
+      }
+
+      @keyframes appear {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>NW Farnham</h1>
+    </main>
+  </body>
+</html>
