@@ -2,6 +2,14 @@
 
 Static landing page hosted on GitHub Pages.
 
+## Layout
+
+The title and expandable Privacy notice share a responsive, viewport-height main
+layout. With Privacy collapsed, both fit on the initial screen without an extra
+footer scrollbar. The title and page padding scale with the viewport. Expanding
+Privacy lets the page grow and scroll when needed so the notice remains readable
+on small screens and at increased text sizes.
+
 ## Analytics
 
 Cloudflare Web Analytics uses a public site token in the module script at the end
